@@ -28,6 +28,7 @@ namespace wpfClient
         {
             InitializeComponent();
 
+            
             client = new NetComm.Client(); //Initialize the client object
 
             //Adding event handling methods for the client
@@ -37,37 +38,43 @@ namespace wpfClient
 
             //Connecting to the host
             client.Connect("10.16.184.154", 3000, "Jack"); //Connecting to the host (on the same machine) with port 2020 and ID "Jack"
-
+            frame1.Content = new StartPage();
             Button btn = new Button();
-            btn.Name = "Send";
+            btn.Name = "Next";
             btn.Click += Send_Click;
-            //he
-            String hey = "heheye";
+  
         }
 
 
         void client_DataReceived(byte[] Data, string ID)
         {
-            Chat.AppendText(ID + ": " + ConvertBytesToString(Data) + Environment.NewLine); //Updates the log with the current connection state
+          //  Chat.AppendText(ID + ": " + ConvertBytesToString(Data) + Environment.NewLine); //Updates the log with the current connection state
         }
       
 
         void client_Disconnected()
         {
-            Chat.AppendText("Disconnected from host!" + Environment.NewLine); //Updates the log with the current connection state
+        //    Chat.AppendText("Disconnected from host!" + Environment.NewLine); //Updates the log with the current connection state
         }
 
         void client_Connected()
         {
-            Chat.AppendText("Connected succesfully!" + Environment.NewLine); //Updates the log with the current connection state
+           // Chat.AppendText("Connected succesfully!" + Environment.NewLine); //Updates the log with the current connection state
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            client.SendData(ConvertStringToBytes(MessageTextBox.Text)); //Sends the message to the host
-            Chat.AppendText("\n " + MessageTextBox.Text);
-            MessageTextBox.Clear(); //Clears the chatmessage textbox text
+          //  client.SendData(ConvertStringToBytes(MessageTextBox.Text)); //Sends the message to the host
+           // Chat.AppendText( MessageTextBox.Text + Environment.NewLine);
+           // MessageTextBox.Clear(); //Clears the chatmessage textbox text
             
+        }
+        
+        
+        private void Next_OnClick(object sender, RoutedEventArgs e)
+        {
+            frame1.Content = new MenuPage(); //Show page2
+            this.Close(); //this will close Page1
         }
 
         string ConvertBytesToString(byte[] bytes)
