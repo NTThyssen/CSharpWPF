@@ -1,0 +1,17 @@
+<Page x:Class="wpfClient.Lobby"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:wpfClient"
+      mc:Ignorable="d"
+      Title="Lobby" Height="800" Width="450">
+    <Grid>
+        <Label Content="Welcome to Lobby " HorizontalAlignment="Left" Margin="124,83,0,0" VerticalAlignment="Top" Height="46" Width="171"/>
+        <TextBlock Name="chatView" HorizontalAlignment="Left" Margin="10,129,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="Beige"  Height="273" Width="430"/>
+        <TextBox Name="textMessage" HorizontalAlignment="Left" Height="23" Margin="10,480,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Enter a Message" HorizontalAlignment="Left" Margin="10,449,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="sendMessage" Content="Send!" HorizontalAlignment="Left" Margin="55,528,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Page>

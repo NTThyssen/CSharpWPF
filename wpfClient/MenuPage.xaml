@@ -7,6 +7,15 @@
       mc:Ignorable="d"
       Title="MenuPage" Height="800" Width="450">
     <Grid>
-        
+        <Button Name="join" Content="Join lobby" HorizontalAlignment="Left" Margin="181,556,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListView HorizontalAlignment="Left" Height="204" Margin="0,95,0,0" VerticalAlignment="Top" Width="440">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <Label Name="lobbyListLabel" Content="Label" Height="33" Width="430"/>
+        </ListView>
+        <Button Name="create" Content="Create Lobby" HorizontalAlignment="Left" Margin="181,609,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Page>

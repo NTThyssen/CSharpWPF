@@ -147,9 +147,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CreateLobby.xaml.cs">
+      <DependentUpon>CreateLobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JoinLobby.xaml.cs">
+      <DependentUpon>JoinLobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lobby.xaml.cs">
+      <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingletonClient.cs" />
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="CreateLobby.xaml" />
+    <Page Include="JoinLobby.xaml" />
+    <Page Include="Lobby.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
