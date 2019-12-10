@@ -5,13 +5,120 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:wpfClient"
       mc:Ignorable="d"
-      Title="Lobby" Height="800" Width="450">
-    <Grid>
-        <Label Content="Welcome to Lobby " HorizontalAlignment="Left" Margin="124,83,0,0" VerticalAlignment="Top" Height="46" Width="171"/>
-        <TextBlock Name="chatView" HorizontalAlignment="Left" Margin="10,129,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="Beige"  Height="273" Width="430"/>
-        <TextBox Name="textMessage" HorizontalAlignment="Left" Height="23" Margin="10,480,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+      Title="Lobby" Height="450" Width="800">
+    <Page.Resources>
+        <Image x:Key="kalaha0" Source="res/kalaha_0.png" x:Shared="False"/>
+        <Image x:Key="kalaha1" Source="res/kalaha_1.png" x:Shared="False"/>
+        <Image x:Key="kalaha2" Source="res/kalaha_2.png" x:Shared="False"/>
+        <Image x:Key="kalaha3" Source="res/kalaha_3.png" x:Shared="False"/>
+        <Image x:Key="kalaha4" Source="res/kalaha_4.png" x:Shared="False"/>
+        <Image x:Key="kalaha5" Source="res/kalaha_5.png" x:Shared="False"/>
+        <Image x:Key="kalaha6" Source="res/kalaha_6.png" x:Shared="False"/>
+        <Image x:Key="kalaha7" Source="res/kalaha_7.png" x:Shared="False"/>
+        <Image x:Key="kalaha8" Source="res/kalaha_8.png" x:Shared="False"/>
+        <Image x:Key="kalahaMore" Source="res/kalaha_more.png" x:Shared="False"/>
+        <Image x:Key="goal0" Source="res/goal_0.png" x:Shared="False" />
+        <Image x:Key="goal1" Source="res/goal_1.png" x:Shared="False" />
+        <Image x:Key="goal2" Source="res/goal_2.png" x:Shared="False" />
+        <Image x:Key="goal3" Source="res/goal_3.png" x:Shared="False"/>
+        <Image x:Key="goal4" Source="res/goal_4.png" x:Shared="False"/>
+        <Image x:Key="goal5" Source="res/goal_5.png" x:Shared="False"/>
+        <Image x:Key="goal6" Source="res/goal_6.png" x:Shared="False"/>
+        <Image x:Key="goal7" Source="res/goal_7.png" x:Shared="False"/>
+        <Image x:Key="goal8" Source="res/goal_8.png" x:Shared="False"/>
+        <Image x:Key="goalMore" Source="res/goal_more.png" x:Shared="False"/>
+
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,10">
+        <StackPanel HorizontalAlignment="Left" Height="202" VerticalAlignment="Top" Width="473" Margin="59,177,0,0">
+            <Image Source="res/kalaha_empty.png" Stretch="UniformToFill" Height="134"/>
+        </StackPanel>
+        <Label Content="Welcome to Lobby " HorizontalAlignment="Left" Margin="584,214,0,0" VerticalAlignment="Top" Height="46" Width="171"/>
+        <TextBox Name="textMessage" HorizontalAlignment="Left" Height="23" Margin="635,349,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Label Content="Enter a Message" HorizontalAlignment="Left" Margin="10,449,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Name="sendMessage" Content="Send!" HorizontalAlignment="Left" Margin="55,528,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="sendMessage" Content="Send!" HorizontalAlignment="Left" Margin="680,389,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Names}" SelectedItem="{Binding selectedName, Mode=TwoWay}" Margin="584,164,45,112"/>
+        <Button Name="pit0" HorizontalAlignment="Left" Margin="403,189,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button Name="pit1"  HorizontalAlignment="Left" Margin="348,189,0,0" VerticalAlignment="Top" Width="50" Height="47" RenderTransformOrigin="0.5,0.5">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+        </Button>
+        <Button Name="pit2"   HorizontalAlignment="Left" Margin="293,189,0,0" VerticalAlignment="Top" Width="50" Height="47">
+            <DynamicResource ResourceKey="kalaha6"/>
+        </Button>
+        <Button Name="pit3"   HorizontalAlignment="Left" Margin="238,189,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button Name="pit4"  HorizontalAlignment="Left" Margin="183,189,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button Name="pit5"  HorizontalAlignment="Left" Margin="128,189,0,0" VerticalAlignment="Top" Width="50" Height="47" RenderTransformOrigin="2.118,0.597">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit7"   HorizontalAlignment="Left" Margin="128,254,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit8"  HorizontalAlignment="Left" Margin="183,254,0,0" VerticalAlignment="Top" Width="50" Height="47" RenderTransformOrigin="-3.489,3.16">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit9"  HorizontalAlignment="Left" Margin="238,254,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit10"  HorizontalAlignment="Left" Margin="293,254,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit11"  HorizontalAlignment="Left" Margin="348,254,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button x:Name="pit12"   HorizontalAlignment="Left" Margin="403,254,0,0" VerticalAlignment="Top" Width="50" Height="47">
+
+            <DynamicResource ResourceKey="kalaha6"/>
+
+        </Button>
+        <Button Name="pit6"  HorizontalAlignment="Left" Margin="67,189,0,0" VerticalAlignment="Top" Width="56" Height="113">
+
+            <DynamicResource ResourceKey="goal0"/>
+
+        </Button>
+        <Button Name="pit13" HorizontalAlignment="Left" Margin="458,189,0,0" VerticalAlignment="Top" Width="56" Height="113">
+
+            <DynamicResource ResourceKey="goal0"/>
+
+        </Button>
+        <Label Name="player1_name" Background="Green" HorizontalAlignment="Left" Margin="243,116,0,0" VerticalAlignment="Top" Height="28
+               " Width="105"/>
+        <Label x:Name="player2_name"  Background="Red" HorizontalAlignment="Left" Margin="243,344,0,0" VerticalAlignment="Top" Height="28
+               " Width="105"/>
+        <Button Content="Go Back" Name="back" HorizontalAlignment="Left" Margin="35,30,0,0" VerticalAlignment="Top" Width="75" Background="PaleVioletRed"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="128,310,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="403,310,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="348,310,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="298,310,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,310,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="178,310,0,0" VerticalAlignment="Top" Width="50"/>
+
+
 
     </Grid>
 </Page>

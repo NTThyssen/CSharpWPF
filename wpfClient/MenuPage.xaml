@@ -5,17 +5,29 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:wpfClient"
       mc:Ignorable="d"
-      Title="MenuPage" Height="800" Width="450">
-    <Grid>
-        <Button Name="join" Content="Join lobby" HorizontalAlignment="Left" Margin="181,556,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListView HorizontalAlignment="Left" Height="204" Margin="0,95,0,0" VerticalAlignment="Top" Width="440">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
+      Title="MenuPage" Height="450" Width="800">
+    
+    <Page.Resources>
+		<Style TargetType="{x:Type GridViewColumnHeader}">
+			<Setter Property="HorizontalContentAlignment" Value="Left" />
+		</Style>
+	</Page.Resources>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="res/pokergreen.jpg" Stretch="Fill" />
+            </Grid.Background>
+         
+            <ListView PreviewMouseLeftButtonUp="listView_Click" HorizontalAlignment="Left" Height="204" Margin="0,64,0,0" VerticalAlignment="Top" Width="790" Name="lvLobby">
+           <ListView.View>
+            
+                <GridView >
+                    <GridViewColumn Header="Lobby Name" Width="580"   DisplayMemberBinding="{Binding Lobby}"/>  
+                    <GridViewColumn Header="Number of players" Width="170" DisplayMemberBinding="{Binding Players}" />
                 </GridView>
             </ListView.View>
-            <Label Name="lobbyListLabel" Content="Label" Height="33" Width="430"/>
         </ListView>
-        <Button Name="create" Content="Create Lobby" HorizontalAlignment="Left" Margin="181,609,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="join" Content="Join lobby" HorizontalAlignment="Left" Margin="365,304,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="create" Content="Create Lobby" HorizontalAlignment="Left" Margin="365,350,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="refresh" Content="Refresh" HorizontalAlignment="Left" Margin="680,304,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Page>

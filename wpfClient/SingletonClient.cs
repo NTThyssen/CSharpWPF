@@ -9,12 +9,18 @@ namespace wpfClient
     {
        private Client _client;
        private static SingletonClient instance;
-       public string username
+       private string username;
+
+       public string getUsername()
        {
-           get => username; 
-           set => username = value;
+           return username;
        }
 
+       public void setUsername(string user)
+       {
+           username = user;
+
+       }
        private SingletonClient() { }
 
         
@@ -51,5 +57,6 @@ namespace wpfClient
         {
             return ASCIIEncoding.ASCII.GetBytes(str);
         }
+        
     }
 }

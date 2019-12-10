@@ -5,12 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:wpfClient"
       mc:Ignorable="d"
-      Title="StartPage" Height="800" Width="450">
+      Title="StartPage" Height="450" Width="800">
        
     <Grid>
-        <Label Content="Enter Username:" HorizontalAlignment="Left" Margin="166,93,0,0" VerticalAlignment="Top" Height="32" Width="106"/>
-        <Button x:Name="Next" Click="Next_OnClick" Content="Next" HorizontalAlignment="Left" Margin="166,195,0,0" VerticalAlignment="Top" Width="106" Height="34"/>
-        <TextBox Name="username" HorizontalAlignment="Left" Height="23" Margin="166,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.167,0.826"/>
+        <Label Content="Enter Username:" HorizontalAlignment="Left" Margin="326,84,0,0" VerticalAlignment="Top" Height="32" Width="106" RenderTransformOrigin="1.644,0.474"/>
+        <Button x:Name="Next" Click="Next_OnClick" HorizontalAlignment="Left" Margin="326,200,0,0" VerticalAlignment="Top" Width="106" Height="34">
+            <StackPanel>
+                <Image Source="res/pokergreen.jpg" />
+                <TextBlock>Disconnect from Server</TextBlock>
+            </StackPanel>  
+        </Button>
+        <TextBox Name="username" HorizontalAlignment="Left" Height="23" Margin="326,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.167,0.826"/>
 
     </Grid>
 </Page> 

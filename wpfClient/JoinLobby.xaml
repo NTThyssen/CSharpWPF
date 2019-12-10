@@ -5,11 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:wpfClient"
       mc:Ignorable="d"
-      Title="JoinLobby" Height="800" Width="450">
+      Title="JoinLobby" Height="450" Width="800">
     <Grid>
-        <Button Name="joinCharByName" Content="JOIN!" HorizontalAlignment="Left" Margin="173,245,0,0" VerticalAlignment="Top" Width="120" Height="19"/>
-        <TextBox Name="enteredChatRoom" HorizontalAlignment="Left" Height="24" Margin="173,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Enter name  romm you wan to join" HorizontalAlignment="Left" Margin="138,143,0,0" VerticalAlignment="Top" Width="209" Height="40"/>
+        <Button Name="joinCharByName" Content="JOIN!" HorizontalAlignment="Left" Margin="339,251,0,0" VerticalAlignment="Top" Width="120" Height="19"/>
+        <TextBox Name="enteredChatRoom" HorizontalAlignment="Left" Height="24" Margin="339,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Enter name  romm you wan to join" HorizontalAlignment="Left" Margin="304,149,0,0" VerticalAlignment="Top" Width="209" Height="40"/>
+        <Button Content="Go Back" Name="back" HorizontalAlignment="Left" Margin="35,30,0,0" VerticalAlignment="Top" Width="75" Background="PaleVioletRed"/>
 
     </Grid>
 </Page>

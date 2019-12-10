@@ -10,6 +10,7 @@ namespace wpfClient
         {
             InitializeComponent();
             joinCharByName.Click += Join_Click;
+            back.Click += Back_OnClick;
         }
         
        
@@ -21,6 +22,15 @@ namespace wpfClient
             NavigationService navService = NavigationService.GetNavigationService(this);
             navService.Navigate(lobby);
             
+        }
+        
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+            MenuPage menuPage = new MenuPage();
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService.Navigate(menuPage);
+
         }
     }
     

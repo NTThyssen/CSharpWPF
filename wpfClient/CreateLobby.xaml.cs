@@ -22,8 +22,9 @@ namespace wpfClient
             InitializeComponent();
             createLobby.Click += Create_Click;
             cmd.Add("NEW_CHATROOM");
-           
-            
+            back.Click += Back_OnClick;
+
+
         }
         
         
@@ -35,6 +36,15 @@ namespace wpfClient
             NavigationService navService = NavigationService.GetNavigationService(this);
             navService.Navigate(lobbyView);
             
+        }
+        
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+            MenuPage menuPage = new MenuPage();
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService.Navigate(menuPage);
+
         }
     }
 }
