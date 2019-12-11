@@ -22,7 +22,7 @@ namespace wpfClient
             lvLobby.MouseDoubleClick += Send_Click;
             refresh.Click += Refresh_OnClick;
          
-            SingletonClient.Singleton.getClient().DataReceived += client_DataReceived;
+            SingletonClient.Singleton.getClient().DataReceived += client_DataReceived;    
 
 
             SingletonClient.Singleton.getClient().SendData(SingletonClient.Singleton.ConvertStringToBytes("REFRESH"));

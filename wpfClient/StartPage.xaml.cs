@@ -25,7 +25,7 @@ namespace wpfClient
         private void Next_OnClick(object sender, RoutedEventArgs e)
         {
            
-         SingletonClient.Singleton.getClient().Connect("10.16.187.247",3000, username.Text);
+         SingletonClient.Singleton.getClient().Connect(IP.Text,3000, username.Text);
          SingletonClient.Singleton.setUsername(username.Text);
           
         }

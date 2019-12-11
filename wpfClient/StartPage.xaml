@@ -11,11 +11,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="res/pokergreen.jpg" Stretch="Fill" />
         </Grid.Background>
-        <Label Content="Enter Username:" HorizontalAlignment="Left" Margin="326,84,0,0" VerticalAlignment="Top" Height="32" Width="106" RenderTransformOrigin="1.644,0.474"/>
-        <Button x:Name="Next" Content="Next" Click="Next_OnClick" HorizontalAlignment="Left" Margin="326,200,0,0" VerticalAlignment="Top" Width="106" Height="34">
+        <Label Content="Enter Username:" HorizontalAlignment="Left" Margin="220,197,0,0" VerticalAlignment="Top" Height="32" Width="106" RenderTransformOrigin="1.644,0.474"/>
+        <Button x:Name="Next" Content="Next" Click="Next_OnClick" HorizontalAlignment="Left" Margin="326,247,0,0" VerticalAlignment="Top" Width="106" Height="34">
             
         </Button>
-        <TextBox Name="username" HorizontalAlignment="Left" Height="23" Margin="326,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.167,0.826"/>
+        <TextBox Name="username" HorizontalAlignment="Left" Height="23" Margin="326,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.167,0.826"/>
+        <TextBox x:Name="IP" HorizontalAlignment="Left" Height="23" Margin="326,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.167,0.826"/>
+        <Label  Content="Enter IP of server:" HorizontalAlignment="Left" Margin="220,140,0,0" VerticalAlignment="Top" Height="32" Width="106" RenderTransformOrigin="1.644,0.474"/>
 
     </Grid>
 </Page> 
