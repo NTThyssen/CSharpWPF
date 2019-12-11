@@ -25,12 +25,9 @@ namespace wpfClient
         private void Next_OnClick(object sender, RoutedEventArgs e)
         {
            
-        //  SingletonClient.Singleton.getClient().Connect("10.16.187.247",3000, username.Text);
-          //SingletonClient.Singleton.setUsername(username.Text);
-          MenuPage menuPage = new MenuPage();
-          NavigationService navService = NavigationService.GetNavigationService(this);
-          navService.Navigate(menuPage);  
-
+         SingletonClient.Singleton.getClient().Connect("10.16.187.247",3000, username.Text);
+         SingletonClient.Singleton.setUsername(username.Text);
+          
         }
         
         void client_DataReceived(byte[] Data, string ID)

@@ -6,10 +6,10 @@ namespace wpfClient
     public class PitField
     {
         public Button pit { get; set; }
-        public int value;
+        public Label value;
         public int pitNumber;
 
-        public PitField(Button pit, int value, int pitNumber)
+        public PitField(Button pit, Label value, int pitNumber)
         {
             this.pit = pit;
             this.value = value;

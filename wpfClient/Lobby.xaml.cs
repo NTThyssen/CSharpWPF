@@ -35,20 +35,20 @@ namespace wpfClient
             SingletonClient.Singleton.getClient().Connected += client_Connected;
 
 
-            gameMapping.Add(new PitField(pit0, 6, 0));
-            gameMapping.Add(new PitField(pit1, 6, 1));
-            gameMapping.Add(new PitField(pit2, 6, 2));
-            gameMapping.Add(new PitField(pit3, 6, 3));
-            gameMapping.Add(new PitField(pit4, 6, 4));
-            gameMapping.Add(new PitField(pit5, 6, 5));
-            gameMapping.Add(new PitField(pit6, 6, 6));
-            gameMapping.Add(new PitField(pit7, 6, 7));
-            gameMapping.Add(new PitField(pit8, 6, 8));
-            gameMapping.Add(new PitField(pit9, 6, 9));
-            gameMapping.Add(new PitField(pit10, 6, 10));
-            gameMapping.Add(new PitField(pit11, 6, 11));
-            gameMapping.Add(new PitField(pit12, 6, 12));
-            gameMapping.Add(new PitField(pit13, 6, 13));
+            gameMapping.Add(new PitField(pit0, label0, 0));
+            gameMapping.Add(new PitField(pit1, label1, 1));
+            gameMapping.Add(new PitField(pit2, label2, 2));
+            gameMapping.Add(new PitField(pit3, label3, 3));
+            gameMapping.Add(new PitField(pit4, label4, 4));
+            gameMapping.Add(new PitField(pit5, label5, 5));
+            gameMapping.Add(new PitField(pit6, label6, 6));
+            gameMapping.Add(new PitField(pit7, label7, 7));
+            gameMapping.Add(new PitField(pit8, label8, 8));
+            gameMapping.Add(new PitField(pit9, label9, 9));
+            gameMapping.Add(new PitField(pit10, label10, 10));
+            gameMapping.Add(new PitField(pit11, label11, 11));
+            gameMapping.Add(new PitField(pit12, label12, 12));
+            gameMapping.Add(new PitField(pit13, label13, 13));
 
             foreach (PitField pit in gameMapping)
             {
@@ -57,7 +57,7 @@ namespace wpfClient
 
             foreach (PitField pit in gameMapping)
             {
-                if (pit.pitNumber >= 6)
+               
                     pit.pit.IsEnabled = false;
             }
            
@@ -112,11 +112,16 @@ namespace wpfClient
                     string[] tempNames =  stringsplit[1].Split(new string[] {" "}, 2, StringSplitOptions.None);
                     player1_name.Content = tempNames[0];
                     player2_name.Content = tempNames[1];
-                    if (SingletonClient.Singleton.getUsername().Equals(player2_name.Content))
+                    
+                    turn.Content = "It is  " + player1_name.Content + "' turn";
+                    if (SingletonClient.Singleton.getUsername().Equals(player1_name.Content))
                     {
                         foreach (PitField pit in gameMapping)
                         {
-                            pit.pit.IsEnabled = false;
+                            if (pit.pitNumber < 6)
+                            {
+                                pit.pit.IsEnabled = true;
+                            }
                         }
                     }
                     break;
@@ -138,7 +143,7 @@ namespace wpfClient
         {
             if (!winner.Equals("undecided"))
             {
-                MessageBox.Show("Has won the game "+ winner);
+                MessageBox.Show(winner + " Has won the game!" );
             }
         }
         public void updateFields(string[] temp)
@@ -150,41 +155,46 @@ namespace wpfClient
             {
                 int tempt = int.Parse(temp[i]);
                 if(i-2 !=6 && i-2 != 13){   
-                    if (int.Parse(temp[i]) <= 8)
+                    if (tempt <= 8)
                     {
                         gameMapping.ElementAt(i-2).pit.Content = FindResource("kalaha"+tempt);
-                        
+                        gameMapping.ElementAt(i - 2).value.Content = temp[i];
+
                     } 
                     else
                     {
                         gameMapping.ElementAt(i-2).pit.Content = FindResource("kalahaMore");
+                        gameMapping.ElementAt(i - 2).value.Content = temp[i];
                     }
                 }
                 else
                 {
-                    if (int.Parse(temp[i]) <= 8)
+                    if ( tempt <= 8)
                     {
                         gameMapping.ElementAt(i-2).pit.Content = FindResource("goal"+tempt);
+                        gameMapping.ElementAt(i-2).value.Content = temp[i];
                         
                     } 
                     else
                     {
                         gameMapping.ElementAt(i-2).pit.Content = FindResource("goalMore");
+                        gameMapping.ElementAt(i - 2).value.Content = temp[i];
                     }
                     
                 } 
-                gameOver(winner);
-                  
-            }
+                
+                turn.Content = "it is  " + playerTurn + " turn";
 
-            if(SingletonClient.Singleton.getUsername().Equals(playerTurn))
+            }
+            gameOver(winner);
+           if(SingletonClient.Singleton.getUsername().Equals(playerTurn))
             {
                 if (SingletonClient.Singleton.getUsername().Equals(player1_name.Content))
                 {
                     foreach (PitField pit in gameMapping)
                     {
-                        if (pit.pitNumber < 6 && pit.pit.Content != FindResource("kalaha0"))
-                        {
+                        if (pit.pitNumber < 6 && !pit.value.Content.Equals("0"))
+                        {    
                             pit.pit.IsEnabled = true;
                         }
                     }
@@ -192,11 +202,18 @@ namespace wpfClient
                 {
                     foreach (PitField pit in gameMapping)
                     {
-                        if (pit.pitNumber > 6 &&  pit.pitNumber < 13 && pit.pit.Content != FindResource("kalaha0"))
+                        if (pit.pitNumber > 6 &&  pit.pitNumber < 13  && !pit.value.Content.Equals("0"))
                         {
                             pit.pit.IsEnabled = true;
                         }
                             
+                    }
+                }
+                else
+                {
+                    foreach (PitField pit in gameMapping)
+                    {
+                        pit.pit.IsEnabled = false;
                     }
                 }
 

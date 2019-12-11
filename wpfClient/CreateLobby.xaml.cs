@@ -30,7 +30,7 @@ namespace wpfClient
         
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-           // SingletonClient.Singleton.getClient().SendData(SingletonClient.Singleton.ConvertStringToBytes("NEW_CHATROOM "+ LobbyName.Text));
+           SingletonClient.Singleton.getClient().SendData(SingletonClient.Singleton.ConvertStringToBytes("NEW_CHATROOM "+ LobbyName.Text));
            
             Lobby lobbyView = new Lobby();
             NavigationService navService = NavigationService.GetNavigationService(this);
