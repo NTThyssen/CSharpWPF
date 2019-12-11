@@ -7,6 +7,9 @@
       mc:Ignorable="d"
       Title="CreateLobby" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="res/pokergreen.jpg" Stretch="Fill" />
+        </Grid.Background>
         <TextBox Name="LobbyName" HorizontalAlignment="Left" Height="29" Margin="294,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" RenderTransformOrigin="0.742,0.345"/>
         <Label Content="Lobby Name:" HorizontalAlignment="Left" Margin="294,90,0,0" VerticalAlignment="Top" Width="226"/>
         <Button Name="createLobby" Content="Create Lobby" HorizontalAlignment="Left" Margin="362,250,0,0" VerticalAlignment="Top" Width="75"/>

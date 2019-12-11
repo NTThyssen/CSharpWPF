@@ -31,6 +31,9 @@
 
     </Page.Resources>
     <Grid Margin="0,0,0,10">
+        <Grid.Background>
+            <ImageBrush ImageSource="res/pokergreen.jpg" Stretch="Fill" />
+        </Grid.Background>
         <StackPanel HorizontalAlignment="Left" Height="202" VerticalAlignment="Top" Width="473" Margin="59,177,0,0">
             <Image Source="res/kalaha_empty.png" Stretch="UniformToFill" Height="134"/>
         </StackPanel>

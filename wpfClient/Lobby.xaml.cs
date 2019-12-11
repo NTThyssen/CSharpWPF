@@ -60,20 +60,14 @@ namespace wpfClient
                 if (pit.pitNumber >= 6)
                     pit.pit.IsEnabled = false;
             }
-
-            
-        
-
-
-
-
-    }
+           
+        }
         
         
         private void Send_Click(object sender, RoutedEventArgs e)
         {
            SingletonClient.Singleton.getClient().SendData(SingletonClient.Singleton.ConvertStringToBytes("SEND_MESSAGE " + textMessage.Text));
-   
+         
         }
 
         private void ChooseField(object sender, RoutedEventArgs e)
@@ -140,10 +134,18 @@ namespace wpfClient
        
         }
 
+        public void gameOver(string winner)
+        {
+            if (!winner.Equals("undecided"))
+            {
+                MessageBox.Show("Has won the game "+ winner);
+            }
+        }
         public void updateFields(string[] temp)
         {
             string playerTurn = temp[0];
             string winner = temp[1];
+            
             for(int i = 2; i<temp.Length; i++)
             {
                 int tempt = int.Parse(temp[i]);
@@ -170,9 +172,8 @@ namespace wpfClient
                         gameMapping.ElementAt(i-2).pit.Content = FindResource("goalMore");
                     }
                     
-                }
-                
-                  
+                } 
+                gameOver(winner);
                   
             }
 
